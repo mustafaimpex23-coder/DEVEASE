@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevEase - App, Web, AI Automation & Digital Marketing Services</title>
+    
+    <!-- Custom DevEase Favicon (Replaces default Earth Icon in browser tab) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B0F19'/><path d='M25 25 L50 75 L75 25' stroke='%233B82F6' stroke-width='12' fill='none' stroke-linecap='round' stroke-linejoin='round'/><path d='M40 45 L75 45' stroke='%238B5CF6' stroke-width='10' fill='none' stroke-linecap='round'/></svg>">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -93,6 +97,7 @@
                 <!-- Desktop / Tablet Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-xs lg:text-sm font-medium text-gray-300">
                     <a href="#about" class="hover:text-brand-blue transition-colors">About Us</a>
+                    <a href="#why-devease" class="hover:text-brand-blue transition-colors">Why DevEase</a>
                     <a href="#services" class="hover:text-brand-blue transition-colors">Services</a>
                     <a href="#portfolio" class="hover:text-brand-blue transition-colors">Portfolio</a>
                     <a href="#contact" class="hover:text-brand-blue transition-colors">Contact</a>
@@ -118,6 +123,7 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-gray-800 px-4 pt-3 pb-6 space-y-3 shadow-2xl">
             <a href="#about" class="mobile-link block text-gray-300 hover:text-brand-blue py-2 px-3 rounded-lg hover:bg-gray-800/40 text-sm">About Us</a>
+            <a href="#why-devease" class="mobile-link block text-gray-300 hover:text-brand-blue py-2 px-3 rounded-lg hover:bg-gray-800/40 text-sm">Why DevEase</a>
             <a href="#services" class="mobile-link block text-gray-300 hover:text-brand-blue py-2 px-3 rounded-lg hover:bg-gray-800/40 text-sm">Services</a>
             <a href="#portfolio" class="mobile-link block text-gray-300 hover:text-brand-blue py-2 px-3 rounded-lg hover:bg-gray-800/40 text-sm">Portfolio</a>
             <a href="#contact" class="mobile-link block text-gray-300 hover:text-brand-blue py-2 px-3 rounded-lg hover:bg-gray-800/40 text-sm">Contact</a>
@@ -156,6 +162,46 @@
                     <i class="fa-solid fa-layer-group text-xs"></i>
                     <span>Explore Portfolios</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why DevEase Section -->
+    <section id="why-devease" class="py-16 sm:py-24 relative bg-gray-950/40 border-t border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">Why Choose Us</h2>
+                <p class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">Why DevEase?</p>
+                <p class="text-gray-400 mt-3 text-xs sm:text-base">We combine cutting-edge technology with direct developer communication to deliver fast, scalable digital products.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Feature 1 -->
+                <div class="gradient-border p-6 sm:p-8 hover:translate-y-[-4px] transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-brand-blue text-xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lightning Fast Execution</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Rapid development cycles with weekly sprints so your application launches on time without delays.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="gradient-border p-6 sm:p-8 hover:translate-y-[-4px] transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-brand-purple text-xl mb-6">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">AI-Powered Solutions</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Integrated LLM models, custom automation pipelines, and smart chatbots to power up your business operations.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="gradient-border p-6 sm:p-8 hover:translate-y-[-4px] transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Direct Support</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Direct communication with lead engineers on WhatsApp or email — no middle managers or communication gaps.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -376,6 +422,10 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+        function closePortfolioModal() {
+            document.getElementById('portfolio-modal').classList.add('hidden');
+        }
+
         function openPortfolioModal(category) {
             const modal = document.getElementById('portfolio-modal');
             const modalContent = document.getElementById('modal-content');
@@ -388,10 +438,7 @@
                         <p class="text-gray-400 text-xs sm:text-sm">Interactive preview of our cross-platform mobile apps.</p>
                     </div>
 
-                    <!-- Mobile UI Frame Container -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        
-                        <!-- Mobile App Screen 1: HealthFitness -->
                         <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col items-center">
                             <div class="w-full bg-black rounded-xl p-3 border border-gray-800 text-center relative overflow-hidden">
                                 <div class="w-16 h-3 bg-gray-800 rounded-full mx-auto mb-4"></div>
@@ -406,7 +453,6 @@
                             <p class="text-[11px] text-gray-400 text-center mt-1">Built with Flutter, SQLite local database & sensor APIs.</p>
                         </div>
 
-                        <!-- Mobile App Screen 2: Online Novels Reader -->
                         <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col items-center">
                             <div class="w-full bg-black rounded-xl p-3 border border-gray-800 text-center relative overflow-hidden">
                                 <div class="w-16 h-3 bg-gray-800 rounded-full mx-auto mb-4"></div>
@@ -421,7 +467,6 @@
                             <p class="text-[11px] text-gray-400 text-center mt-1">Cloudinary cloud PDF streaming & offline reader.</p>
                         </div>
 
-                        <!-- Mobile App Screen 3: App Blocker -->
                         <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col items-center">
                             <div class="w-full bg-black rounded-xl p-3 border border-gray-800 text-center relative overflow-hidden">
                                 <div class="w-16 h-3 bg-gray-800 rounded-full mx-auto mb-4"></div>
@@ -433,7 +478,6 @@
                             <h4 class="text-sm font-bold text-white mt-3">App Blocker Utility</h4>
                             <p class="text-[11px] text-gray-400 text-center mt-1">Native Kotlin services & system overlay controls.</p>
                         </div>
-
                     </div>
 
                     <a href="https://wa.me/923394022496?text=Hi%20DevEase,%20I%20want%20to%20build%20a%20Mobile%20App!" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2">
@@ -444,105 +488,79 @@
             } else if (category === 'ai') {
                 modalContent.innerHTML = `
                     <div class="mb-6">
-                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-brand-purple text-xs font-bold uppercase tracking-wider border border-purple-500/30">Web & AI Solutions Showcase</span>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Live Web & AI App UI Mockups</h3>
-                        <p class="text-gray-400 text-xs sm:text-sm">Interactive UI frames showing web portals and AI assistants.</p>
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-brand-purple text-xs font-bold uppercase tracking-wider border border-purple-500/30">Web & AI Showcase</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Web Solutions & AI Interfaces</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">Interactive preview of web platforms and custom AI tools.</p>
                     </div>
 
-                    <!-- Web UI Browser Mockup -->
-                    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden mb-6">
-                        <div class="bg-gray-800 px-4 py-2.5 flex items-center gap-2 border-b border-gray-700">
-                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                            <div class="bg-gray-900 px-4 py-1 rounded-lg text-[11px] text-gray-400 flex-grow max-w-sm ml-2 font-mono">https://devease.agency/ai-assistant-demo</div>
-                        </div>
-
-                        <div class="p-6 bg-brand-dark space-y-4">
-                            <div class="flex items-center justify-between border-b border-gray-800 pb-3">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white"><i class="fa-solid fa-robot"></i></div>
-                                    <div>
-                                        <p class="text-xs font-bold text-white">Jarvis Voice AI Assistant</p>
-                                        <p class="text-[10px] text-emerald-400">● Online & Listening</p>
-                                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+                            <div class="bg-black rounded-xl p-3 border border-gray-800">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    <span class="text-[10px] text-gray-500 ml-2">mustafa-impex.vercel.app</span>
                                 </div>
-                                <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-1 rounded">Gemini API Powered</span>
+                                <h5 class="text-sm font-bold text-white">Mustafa Impex Business Portal</h5>
+                                <p class="text-xs text-gray-400 mt-1">Export / Import web platform crafted with Tailwind CSS & fast deployment.</p>
                             </div>
+                        </div>
 
-                            <div class="space-y-2 text-xs">
-                                <div class="p-3 bg-gray-900 rounded-xl max-w-xs text-gray-300">User: "Hey Jarvis, generate an interior room layout."</div>
-                                <div class="p-3 bg-purple-900/40 border border-purple-500/30 rounded-xl max-w-sm text-white ml-auto">Jarvis: "Processing room layout using Stability AI & Decor8 REST engines..."</div>
+                        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+                            <div class="bg-black rounded-xl p-3 border border-gray-800">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-brand-purple"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Room Designer</span>
+                                    <span class="text-[9px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded">Stability AI REST</span>
+                                </div>
+                                <p class="text-xs text-gray-300">Generates 3D interior architecture renders from raw camera photos in real-time.</p>
                             </div>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/923394022496?text=Hi%20DevEase,%20I%20want%20to%20build%20a%20Web%20or%20AI%20Project!" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2">
+                    <a href="https://wa.me/923394022496?text=Hi%20DevEase,%20I%20want%20to%20build%20a%20Web/AI%20Project!" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-base"></i>
-                        <span>Hire Us for Web / AI Project on WhatsApp</span>
+                        <span>Hire Us for Web & AI Development on WhatsApp</span>
                     </a>
                 `;
             } else if (category === 'marketing') {
                 modalContent.innerHTML = `
                     <div class="mb-6">
-                        <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-brand-cyan text-xs font-bold uppercase tracking-wider border border-cyan-500/30">Marketing Analytics Showcase</span>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Live Meta Ad Campaign Dashboard</h3>
-                        <p class="text-gray-400 text-xs sm:text-sm">Real-time metrics preview of our lead generation & ad scale campaigns.</p>
+                        <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-brand-cyan text-xs font-bold uppercase tracking-wider border border-cyan-500/30">Marketing Showcase</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Digital Marketing & Meta Ad Growth</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">High-converting Meta ad campaigns and ROI analytics tracking.</p>
                     </div>
 
-                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6 space-y-6">
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                            <div class="p-3 bg-black/60 rounded-xl border border-gray-800">
-                                <p class="text-[10px] text-gray-400 uppercase">Total Impressions</p>
-                                <p class="text-xl font-bold text-white">142.8K</p>
-                            </div>
-                            <div class="p-3 bg-black/60 rounded-xl border border-gray-800">
-                                <p class="text-[10px] text-gray-400 uppercase">Link Clicks</p>
-                                <p class="text-xl font-bold text-brand-cyan">12,450</p>
-                            </div>
-                            <div class="p-3 bg-black/60 rounded-xl border border-gray-800">
-                                <p class="text-[10px] text-gray-400 uppercase">Conversions / Leads</p>
-                                <p class="text-xl font-bold text-emerald-400">840</p>
-                            </div>
-                            <div class="p-3 bg-black/60 rounded-xl border border-gray-800">
+                    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="bg-black p-3 rounded-xl border border-gray-800">
                                 <p class="text-[10px] text-gray-400 uppercase">Average ROAS</p>
-                                <p class="text-xl font-bold text-purple-400">4.2x</p>
+                                <p class="text-xl font-extrabold text-emerald-400">4.8x</p>
                             </div>
-                        </div>
-
-                        <div class="bg-black/40 p-4 rounded-xl border border-gray-800">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold text-white">Meta Pixel Conversion Funnel</span>
-                                <span class="text-[10px] text-emerald-400 font-bold">Active Scaling</span>
+                            <div class="bg-black p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase">Cost Per Lead</p>
+                                <p class="text-xl font-extrabold text-brand-blue">-38%</p>
                             </div>
-                            <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden flex">
-                                <div class="bg-brand-blue h-full w-[50%]" title="FB Ad Reach"></div>
-                                <div class="bg-brand-purple h-full w-[30%]" title="Instagram Ads"></div>
-                                <div class="bg-emerald-400 h-full w-[20%]" title="WhatsApp Leads"></div>
+                            <div class="bg-black p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase">Conversions</p>
+                                <p class="text-xl font-extrabold text-brand-purple">+12,400</p>
+                            </div>
+                            <div class="bg-black p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase">Ad Budget Managed</p>
+                                <p class="text-xl font-extrabold text-pink-400">$50k+</p>
                             </div>
                         </div>
                     </div>
 
-                    <a href="https://wa.me/923394022496?text=Hi%20DevEase,%20I%20want%20to%20run%20Digital%20Marketing%20Ads!" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2">
+                    <a href="https://wa.me/923394022496?text=Hi%20DevEase,%20I%20want%20to%20run%20Marketing%20Ads!" target="_blank" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-base"></i>
-                        <span>Start Digital Marketing Campaign on WhatsApp</span>
+                        <span>Hire Us for Digital Marketing on WhatsApp</span>
                     </a>
                 `;
             }
 
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
         }
-
-        function closePortfolioModal() {
-            const modal = document.getElementById('portfolio-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.getElementById('portfolio-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'portfolio-modal') closePortfolioModal();
-        });
     </script>
 </body>
 </html>
